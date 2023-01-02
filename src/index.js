@@ -2,16 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import listener from './TOP Bar';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const listen = new listener()
+const body = listen.selectElement('.theme')
+const infoCard = document.querySelector('.artist-Info-Card-Container')
+        
+
+
+
+
+
+
+
+
+
+//add event listeners
+body.addEventListener("click", listen.theme)
+
+
+  
 root.render(
   <React.StrictMode>
-    <App />
+    <App body={body}/>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
